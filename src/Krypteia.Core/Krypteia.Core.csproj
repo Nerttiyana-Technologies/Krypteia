@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Krypteia.Core</PackageId>
+    <Title>Krypteia Core</Title>
+    <Description>Default RSA-2048 implementation of the Krypteia zero-knowledge encryption library. Uses .NET's built-in cryptographic primitives with secure defaults (OAEP-SHA256 padding, FIPS-validated providers).</Description>
+    <RootNamespace>Krypteia</RootNamespace>
+    <AssemblyName>Krypteia.Core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Krypteia.Abstractions\Krypteia.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

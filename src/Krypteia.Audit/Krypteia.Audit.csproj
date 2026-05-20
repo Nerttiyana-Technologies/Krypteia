@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Krypteia.Audit</PackageId>
+    <Title>Krypteia Audit</Title>
+    <Description>Audit logging for Krypteia operations. Captures all encryption, decryption, and key management events with the detail required for CMMC Level 2 and similar compliance frameworks.</Description>
+    <RootNamespace>Krypteia.Audit</RootNamespace>
+    <AssemblyName>Krypteia.Audit</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Krypteia.Abstractions\Krypteia.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.8" />
+  </ItemGroup>
+
+</Project>

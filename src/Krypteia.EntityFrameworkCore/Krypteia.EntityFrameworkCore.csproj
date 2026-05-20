@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Krypteia.EntityFrameworkCore</PackageId>
+    <Title>Krypteia for Entity Framework Core</Title>
+    <Description>Entity Framework Core integration for Krypteia. Provides value converters and conventions for transparently encrypting and decrypting sensitive properties on EF Core entities.</Description>
+    <RootNamespace>Krypteia.EntityFrameworkCore</RootNamespace>
+    <AssemblyName>Krypteia.EntityFrameworkCore</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Krypteia.Abstractions\Krypteia.Abstractions.csproj" />
+    <ProjectReference Include="..\Krypteia.Core\Krypteia.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.8" />
+  </ItemGroup>
+
+</Project>
