@@ -430,3 +430,6 @@ FodyWeavers.xsd
 
 # macOS Finder metadata
 .DS_Store
+
+# JetBrains Rider / IntelliJ IDE settings
+.idea/
