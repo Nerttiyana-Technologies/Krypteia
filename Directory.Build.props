@@ -16,12 +16,34 @@
     <Company>Krypteia Project</Company>
     <Copyright>Copyright © 2026 Krypteia Contributors</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/your-org/Krypteia</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/your-org/Krypteia</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/isureshsubramanian/Krypteia</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/isureshsubramanian/Krypteia</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>encryption;rsa;cryptography;security;dotnet;zero-knowledge;cmmc</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <!-- Packability: nothing packs by default. Library projects opt back in. -->
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <!--
+    Every project EXCEPT the sample and the tests is a publishable library,
+    so it opts back into packing. This condition keys off the project's
+    directory: anything under 'src' packs; anything under 'samples' or
+    'tests' does not. Works whether or not a src/Directory.Build.props
+    file exists.
+  -->
+  <PropertyGroup Condition="$(MSBuildProjectDirectory.Contains('$(MSBuildThisFileDirectory)src'))">
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <!-- Embed the README into every package so it renders on nuget.org -->
+  <ItemGroup Condition="'$(IsPackable)' == 'true'">
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <!-- Reproducible build settings - critical for crypto libraries -->
   <PropertyGroup>
