@@ -12,14 +12,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           global-json-file: global.json
+
+      # Verify the pushed tag matches VersionPrefix in Directory.Build.props.
+      # With Option A versioning these are kept in sync by hand, so this guard
+      # catches the mistake of tagging v0.2.0 while the file still says 0.1.0.
+      - name: Verify tag matches VersionPrefix
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          PREFIX=$(grep -oP '(?<=<VersionPrefix>)[^<]+' Directory.Build.props)
+          echo "Git tag (stripped): $TAG"
+          echo "VersionPrefix:      $PREFIX"
+          if [ "$TAG" != "$PREFIX" ]; then
+            echo "::error::Tag '$TAG' does not match VersionPrefix '$PREFIX' in Directory.Build.props."
+            exit 1
+          fi
+          echo "Tag and VersionPrefix match."
 
       - name: Restore
         run: dotnet restore
@@ -34,7 +49,7 @@ jobs:
         run: dotnet pack --configuration Release --no-build --output ./artifacts
 
       - name: Upload packages as build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: nuget-packages
           path: ./artifacts/*
@@ -43,19 +58,20 @@ jobs:
     name: Publish to NuGet.org
     needs: pack
     runs-on: ubuntu-latest
-    # The 'nuget-publish' environment can be configured in repo Settings
-    # with a required reviewer, so the publish waits for manual approval.
-    # To publish automatically with no approval gate, remove this line.
+    # The 'nuget-publish' environment gates the publish behind manual
+    # approval. Create it in repo Settings > Environments and add yourself
+    # as a required reviewer. To publish automatically with no approval
+    # gate, remove the 'environment:' line below.
     environment: nuget-publish
     steps:
       - name: Download packages
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: nuget-packages
           path: ./artifacts
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '10.0.x'
 
