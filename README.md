@@ -2,7 +2,7 @@
 
 > Zero-knowledge encryption for .NET with user-recoverable keys.
 
-[![Build](https://img.shields.io/github/actions/workflow/status/your-org/Krypteia/ci.yml?branch=main)](https://github.com/your-org/Krypteia/actions)
+[![Build](https://img.shields.io/github/actions/workflow/status/isureshsubramanian/Krypteia/ci.yml?branch=main)](https://github.com/isureshsubramanian/Krypteia/actions)
 [![NuGet](https://img.shields.io/nuget/v/Krypteia.Core)](https://www.nuget.org/packages/Krypteia.Core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![.NET 10.0](https://img.shields.io/badge/.NET-10.0-512BD4)](https://dotnet.microsoft.com/download)
