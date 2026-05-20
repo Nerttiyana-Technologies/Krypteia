@@ -24,6 +24,31 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
+  <!--
+    Package versioning. Single source of truth for all packable libraries.
+    To release a new version: bump the number here, commit, then tag the
+    repo to match (e.g. git tag v0.1.0). The GitHub Actions release
+    workflow triggers on that tag.
+
+    Versioning policy (Semantic Versioning 2.0.0):
+      - 0.x.y  -> pre-1.0: the public API may still change between minor
+                  versions. Krypteia stays on 0.x until the third-party
+                  security audit is complete and the API is committed to.
+      - MAJOR  -> incremented for breaking API changes (1.0.0 onward).
+      - MINOR  -> incremented for backwards-compatible new features.
+      - PATCH  -> incremented for backwards-compatible bug fixes.
+  -->
+  <PropertyGroup>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <!--
+      VersionSuffix marks pre-release builds. Leave empty for a final
+      release. For a pre-release, set e.g. "preview.1" or "rc.1" — the
+      package version becomes 0.1.0-preview.1. Can also be supplied at
+      build time:  dotnet pack -p:VersionSuffix=preview.1
+    -->
+    <VersionSuffix></VersionSuffix>
+  </PropertyGroup>
+
   <!-- Packability: nothing packs by default. Library projects opt back in. -->
   <PropertyGroup>
     <IsPackable>false</IsPackable>
@@ -61,7 +86,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <DebugType>embedded</DebugType>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
 
   <!-- XML documentation - all public APIs must be documented -->
