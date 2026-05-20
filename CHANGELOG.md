@@ -23,4 +23,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ASP.NET Core DI extensions (`AddKrypteia()`)
 - Sample Web API demonstrating encrypt/decrypt/generate-keys endpoints
 
-[Unreleased]: https://github.com/your-org/Krypteia/compare/HEAD
+[Unreleased]: https://github.com/isureshsubramanian/Krypteia/compare/HEAD
