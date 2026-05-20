@@ -26,7 +26,7 @@ This is the complete Krypteia project, ready to build on .NET 10.
 ✓ Krypteia.Samples.WebApi
 ```
 
-Build outcome: **10 of 10 projects built successfully, 11 tests pass, 1 skipped.**
+
 
 ## What's in the box
 
