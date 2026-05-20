@@ -62,11 +62,3 @@ Krypteia/
 └── docs/                        ← compliance + design docs go here
 ```
 
-## Next pieces to implement (in suggested order)
-
-1. **`IKeyManagementService` default implementation** — an in-memory store for tests and reference, plus the interface contract for production stores.
-2. **`IKeyResetService` implementation** — the email-token reset flow (your headline feature).
-3. **EF Core value converter** — transparent property encryption for entity fields.
-4. **`COMPLIANCE-CMMC.md`** — the CMMC Level 2 control mapping document for the `docs/` folder.
-
-Each of these is a few hours of focused work and a few dozen lines of code on top of what's already here.
