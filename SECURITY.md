@@ -6,8 +6,8 @@ If you believe you have found a security vulnerability in Krypteia, please repor
 
 ### How to report
 
-- **Preferred:** Open a [GitHub Security Advisory](https://github.com/your-org/Krypteia/security/advisories/new) on the repository. This creates a private channel between you and the maintainers.
-- **Alternate:** Email `security@krypteia.example` (replace with actual address once provisioned). For sensitive details, encrypt with the PGP key linked from the GitHub security page.
+- **Preferred:** Open a [GitHub Security Advisory](https://github.com/isureshsubramanian/Krypteia/security/advisories/new) on the repository. This creates a private channel between you and the maintainers.
+- **Alternate:** Email `i.suresh.subramanian@gmail.com` (replace with actual address once provisioned). For sensitive details, encrypt with the PGP key linked from the GitHub security page.
 
 ### What to include
 

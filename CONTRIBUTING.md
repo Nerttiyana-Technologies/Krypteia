@@ -25,7 +25,7 @@ Requirements:
 - (Optional) `dotnet-format` and `dotnet-coverage` global tools
 
 ```bash
-git clone https://github.com/your-org/Krypteia
+git clone https://github.com/isureshsubramanian/Krypteia
 cd Krypteia
 dotnet restore
 dotnet build
@@ -56,7 +56,7 @@ dotnet test tests/Krypteia.SecurityTests
 
 ## Reporting bugs (non-security)
 
-Use the [GitHub issue tracker](https://github.com/your-org/Krypteia/issues) with the bug report template. For security vulnerabilities, see [SECURITY.md](SECURITY.md) instead.
+Use the [GitHub issue tracker](https://github.com/isureshsubramanian/Krypteia/issues) with the bug report template. For security vulnerabilities, see [SECURITY.md](SECURITY.md) instead.
 
 ## Licensing
 
@@ -64,4 +64,4 @@ By contributing, you agree that your contributions will be licensed under the pr
 
 ## Questions
 
-Open a [Discussion](https://github.com/your-org/Krypteia/discussions) — questions there often help future contributors find answers.
+Open a [Discussion](https://github.com/isureshsubramanian/Krypteia/discussions) — questions there often help future contributors find answers.
