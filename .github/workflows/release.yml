@@ -1,0 +1,69 @@
+name: Release
+
+# Triggered by pushing a version tag, e.g.:  git tag v0.1.0 && git push origin v0.1.0
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  pack:
+    name: Build, Test & Pack
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test --configuration Release --no-build --verbosity normal
+
+      - name: Pack
+        run: dotnet pack --configuration Release --no-build --output ./artifacts
+
+      - name: Upload packages as build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-packages
+          path: ./artifacts/*
+
+  publish:
+    name: Publish to NuGet.org
+    needs: pack
+    runs-on: ubuntu-latest
+    # The 'nuget-publish' environment can be configured in repo Settings
+    # with a required reviewer, so the publish waits for manual approval.
+    # To publish automatically with no approval gate, remove this line.
+    environment: nuget-publish
+    steps:
+      - name: Download packages
+        uses: actions/download-artifact@v4
+        with:
+          name: nuget-packages
+          path: ./artifacts
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Push packages to NuGet.org
+        run: |
+          dotnet nuget push "./artifacts/*.nupkg" \
+            --api-key "${{ secrets.NUGET_API_KEY }}" \
+            --source https://api.nuget.org/v3/index.json \
+            --skip-duplicate
+        # --skip-duplicate: if a version is already published, skip it
+        # rather than failing the whole run.
