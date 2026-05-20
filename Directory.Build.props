@@ -33,13 +33,21 @@
     Every project EXCEPT the sample and the tests is a publishable library,
     so it opts back into packing. This condition keys off the project's
     directory: anything under 'src' packs; anything under 'samples' or
-    'tests' does not. Works whether or not a src/Directory.Build.props
-    file exists.
+    'tests' does not.
   -->
   <PropertyGroup Condition="$(MSBuildProjectDirectory.Contains('$(MSBuildThisFileDirectory)src'))">
     <IsPackable>true</IsPackable>
   </PropertyGroup>
-  
+
+  <!--
+    Embed the repo README into every library package so it renders on
+    nuget.org. $(MSBuildThisFileDirectory) is this file's folder (the repo
+    root), so the path is correct for every project regardless of how
+    deeply its csproj is nested.
+  -->
+  <ItemGroup Condition="'$(IsPackable)' == 'true'">
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <!-- Reproducible build settings - critical for crypto libraries -->
   <PropertyGroup>
