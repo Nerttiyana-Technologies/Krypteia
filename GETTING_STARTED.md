@@ -9,7 +9,7 @@ This is the complete Krypteia project, ready to build on .NET 10.
 2. Open `Krypteia.sln` in JetBrains Rider (or Visual Studio 2026 / VS Code with C# Dev Kit).
 3. Build: `dotnet build` (or use the IDE).
 4. Run tests: `dotnet test`.
-5. Run the sample API: `dotnet run --project samples/Krypteia.Samples.WebApi` — then open https://localhost:7160/swagger.
+5. Run the sample API: `dotnet run --project samples/Krypteia.Samples.WebApi` — then open https://localhost:7160/scalar/v1.
 
 ## What you should see
 
