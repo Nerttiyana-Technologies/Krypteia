@@ -4,7 +4,7 @@ This is the complete Krypteia project, ready to build on .NET 10.
 
 ## To use it
 
-1. Extract the zip into `/Users/sureshsubramanian/Workspace/projects/dotnet/`.
+1. Extract the zip into `/Users/[USERNAME]/[DIRECTORY]/`.
    This will create a `Krypteia/` folder containing everything.
 2. Open `Krypteia.sln` in JetBrains Rider (or Visual Studio 2026 / VS Code with C# Dev Kit).
 3. Build: `dotnet build` (or use the IDE).
