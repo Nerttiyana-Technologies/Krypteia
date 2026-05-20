@@ -1,0 +1,12 @@
+# EF Core generates the files in this folder. Generated code does not need
+# to satisfy the same analyzer rules as hand-written code, and these files
+# may be regenerated at any time — so hand-edits to fix analyzer findings
+# would not survive. Relax analysis for this folder only.
+
+[*.cs]
+# CA1861: EF Core emits constant array literals inline in migrations.
+dotnet_diagnostic.CA1861.severity = none
+
+# Generated migration code is exempt from documentation and style rules.
+dotnet_diagnostic.CS1591.severity = none
+generated_code = true

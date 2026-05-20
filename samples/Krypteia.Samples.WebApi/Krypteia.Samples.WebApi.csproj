@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <AssemblyName>Krypteia.Samples.WebApi</AssemblyName>
+    <RootNamespace>Krypteia.Samples.WebApi</RootNamespace>
+    <UserSecretsId>krypteia-sample-webapi</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.8" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.14.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Krypteia.Abstractions\Krypteia.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\Krypteia.Core\Krypteia.Core.csproj" />
+    <ProjectReference Include="..\..\src\Krypteia.KeyReset\Krypteia.KeyReset.csproj" />
+    <ProjectReference Include="..\..\src\Krypteia.Audit\Krypteia.Audit.csproj" />
+    <ProjectReference Include="..\..\src\Krypteia.AspNetCore\Krypteia.AspNetCore.csproj" />
+  </ItemGroup>
+
+</Project>

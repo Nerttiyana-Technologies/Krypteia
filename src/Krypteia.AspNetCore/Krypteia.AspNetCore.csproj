@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Krypteia.AspNetCore</PackageId>
+    <Title>Krypteia for ASP.NET Core</Title>
+    <Description>ASP.NET Core integration for Krypteia. Provides dependency injection extensions, options binding, and ready-to-use middleware for the key reset HTTP flow.</Description>
+    <RootNamespace>Krypteia.AspNetCore</RootNamespace>
+    <AssemblyName>Krypteia.AspNetCore</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Krypteia.Abstractions\Krypteia.Abstractions.csproj" />
+    <ProjectReference Include="..\Krypteia.Audit\Krypteia.Audit.csproj" />
+    <ProjectReference Include="..\Krypteia.Core\Krypteia.Core.csproj" />
+    <ProjectReference Include="..\Krypteia.EntityFrameworkCore\Krypteia.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Krypteia.KeyReset\Krypteia.KeyReset.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.8" />
+  </ItemGroup>
+
+</Project>

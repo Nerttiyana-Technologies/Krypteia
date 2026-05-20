@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Krypteia.KeyReset</PackageId>
+    <Title>Krypteia Key Reset</Title>
+    <Description>Email-based private key recovery flow for Krypteia. Provides one-time tokens with configurable TTL, hashed token storage, and automated data re-encryption when keys are rotated.</Description>
+    <RootNamespace>Krypteia.KeyReset</RootNamespace>
+    <AssemblyName>Krypteia.KeyReset</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Krypteia.Abstractions\Krypteia.Abstractions.csproj" />
+    <ProjectReference Include="..\Krypteia.Core\Krypteia.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.16.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.8" />
+  </ItemGroup>
+
+</Project>
