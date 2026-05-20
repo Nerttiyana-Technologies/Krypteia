@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
     <PackageId>Krypteia.Abstractions</PackageId>
     <Title>Krypteia Abstractions</Title>
     <Description>Interfaces, DTOs, and exceptions for the Krypteia zero-knowledge encryption library. Reference this package to define your own implementations without pulling in default cryptographic implementations.</Description>
