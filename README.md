@@ -4,6 +4,8 @@
 
 <img src="header.png" alt="Zero-knowledge encryption for .NET with user-recoverable keys." />
 
+</div>
+
 <br/>
 
 > Zero-knowledge encryption for .NET with user-recoverable keys.
