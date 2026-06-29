@@ -1,5 +1,11 @@
 # Krypteia
 
+<div align="center">
+
+<img src="header.png" alt="Zero-knowledge encryption for .NET with user-recoverable keys." />
+
+<br/>
+
 > Zero-knowledge encryption for .NET with user-recoverable keys.
 
 [![Build](https://img.shields.io/github/actions/workflow/status/isureshsubramanian/Krypteia/ci.yml?branch=main)](https://github.com/isureshsubramanian/Krypteia/actions)
