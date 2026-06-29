@@ -1,5 +1,3 @@
-# Krypteia
-
 <div align="center">
 
 <img src="header.png" alt="Zero-knowledge encryption for .NET with user-recoverable keys." />
